@@ -1,130 +1,408 @@
-/*CSS Reset / Normalize*/
-/*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
-coloque nas sessões indicadas*/
-
-:root{
-    /*Insira a variavel das outras cores inspecionando o modelo do figma*/
-    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
-   --cor-de-fundo: #F5F5F5;
-   --cor-de-link: #000;
+:root {
+  --cor-de-fundo: #f5f5f5;
+  --cor-de-link: #000;
+  --cor-de-secao: #eaf2fd;
+  --cor-de-texto: #464646;
+  --cor-de-botao-primario: #2a7ae4;
+  --cor-de-botao-primario-hover: #5595e9;
+  --cor-de-botao-secundario-hover: #d4e4fa;
 }
 
 body {
-    box-sizing: border-box;
-    background-color: var(--cor-de-fundo) ;
-    font-family: 'Raleway';
-    margin: 0;
-    padding: 0;
-    line-height: 1;
+  box-sizing: border-box;
+  background-color: var(--cor-de-fundo);
+  font-family: "Raleway";
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
-ol, ul,li {
-    list-style: none;
+ol,
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-a{
-    text-decoration: none;
-    color: var(--cor-de-link);
+a {
+  text-decoration: none;
+  color: var(--cor-de-link);
 }
 
-/*Neste desafio, gostariamos que praticassem a metodologia BEM, caso seintam a vontade 
-de utiliza-la. 
+h1,
+h2,
+h3,
+p {
+  color: var(--cor-de-texto);
+}
 
-Mas o que é o BEM?
+section {
+  padding: 1rem;
+}
 
-BEM (Block, Element, Modifier) ​​é uma abordagem baseada em componentes para o desenvolvimento
-web. A ideia por trás disso é dividir a interface do usuário em blocos independentes.
-Isso torna o desenvolvimento de interface fácil e rápido, mesmo com uma interface
-de usuário complexa, e permite a reutilização de código existente sem copiar e colar.
+button {
+  all: unset;
+  border: 2px solid var(--cor-de-botao-primario);
+}
 
-Link da documentação oficial!
-https://en.bem.info/methodology/quick-start/*/
+.btn__primario {
+  background-color: var(--cor-de-botao-primario);
+  color: white;
+}
+
+.btn__primario:hover {
+  background-color: var(--cor-de-botao-primario-hover);
+  border-color: var(--cor-de-botao-primario-hover);
+}
+
+.btn__secundario {
+  background-color: var(--cor-de-fundo);
+  color: var(--cor-de-botao-primario);
+}
+
+.btn__secundario:hover {
+  background-color: var(--cor-de-botao-secundario-hover);
+}
+
+.all {
+  /* padding: 0rem 2rem; */
+}
 
 /*Sessão Menu*/
 
-section.menu{
+section.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav > li {
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menu__list {
+  display: none;
 }
 
 /*Sessão Title*/
 
-section.title{
-
+section.title {
+  margin-top: 2rem;
 }
 
-/*Sessão About*/
+.title__profile {
+  border-radius: 50%;
+  width: 10rem;
+}
 
-section.about{
+.title__subsection {
+  font-weight: normal;
+}
 
+.title__network {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+/*Sessão Sobre mim*/
+
+section.about {
+  background-color: var(--cor-de-secao);
+}
+
+section.about img {
+  width: 80px;
+}
+
+/* Sessão Skills*/
+
+.skills__title {
+  text-align: center;
+}
+.skills__line {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.skills__box {
+  background-color: white;
+  width: 156px;
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.skills__box ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /*Sessão Hobbies*/
 
-section.hobbies{
-    
+.hobbies__title {
+  text-align: center;
+}
+
+.hobbies__line {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hobbies__box {
+  background-color: white;
+  width: 156px;
+  height: 118px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hobbies__box ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* Experiência Acadêmica*/
 
-section.academic{
-
+section.academic {
+  background-color: var(--cor-de-secao);
 }
 
-/* experiência*/
-
-section.experience{
-
+.academic__courses__item__img img {
+  width: 200px;
+}
+.academic__title {
+  text-align: center;
 }
 
+.academic__courses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* experiência Profissional*/
+
+section.experience {
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.experience__img {
+  width: 70vw;
+}
+.experiencia__botao--repo,
+.experiencia__botao--demo {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+}
+
+.experiencia__botao--repo {
+  margin-right: 1rem;
+}
 /*Contato*/
-
-section.formcontato{
-
+section.formcontato {
+  background-color: var(--cor-de-secao);
 }
 
-/*footeer*/
-
-section.footer{
-   
+.formcontato__img {
+  display: none;
 }
 
-/* Chegou a hora de se desafiar com a responsividade, 
-utilize como referência os breakpoints @media abaixo*/
-
-/*Tablet*/
-@media (min-width: 768px) {
-
-/* Menu */
-
-/*title*/
-
-/*Skills*/
-
-/*Hobbies*/
-
-/*Experiências acadêmicas*/
-
-/*Expeirência profissional*/
-
+.formcontato__title {
+  text-align: center;
 }
 
-/*Mobile*/
-@media (min-width: 425px) {
+.formcontato__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
-/*Menu*/
+.formcontato__input {
+  width: 90%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 1px solid rgb(185, 185, 185);
+  padding: 0 0.5rem;
+}
 
-/*Titulo*/
+.formcontato__input:focus {
+  outline: none;
+  color: var(--cor-de-botao-primario);
+  border-bottom: 1px solid var(--cor-de-botao-primario);
+}
 
-/*Sessão sobre*/
+.formcontato__textarea {
+  height: 90px;
+}
 
-/*Skills*/
-
-/*Hobbies*/
- 
-/*Formação Acadêmica*/
-
-/*Experiência Profissional*/
-
- /*Contato*/
+.formcontato__botao {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+}
 
 /*Footer*/
 
+section.footer {
+  text-align: center;
+  background-color: white;
+}
+/*Tablet*/
+@media (min-width: 768px) {
+  section {
+    padding: 1rem 2.5rem;
+  }
+
+  .title__div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .title__network {
+    gap: 0;
+    justify-content: space-evenly;
+  }
+
+  /*Skills*/
+  .skills__line {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /*Hobbies*/
+  .hobbies__line {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .academic__courses {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /*Skills*/
+  .formcontato__text {
+    text-align: center;
+  }
+}
+
+/*Desktop*/
+@media (min-width: 1024px) {
+  section {
+    padding: 1rem 3rem;
+  }
+  .all {
+    /* padding: 0rem 10rem; */
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+  /* Menu */
+  .menu__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /*title*/
+  .title__div {
+    justify-content: space-around;
+  }
+
+  .title__profile {
+    width: 25rem;
+  }
+
+  .title__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title__network {
+    justify-content: flex-start;
+    gap: 3rem;
+  }
+
+  /*About*/
+  .about__container {
+    width: 50vw;
+  }
+
+  /*Skills*/
+  .skills__line {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /*Hobbies*/
+  .hobbies__line {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /*ProfessionalExp*/
+  .experiencie__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .experiencie__box:nth-child(1) img {
+    order: 2;
+  }
+  .experiencie__box:nth-child(1) div {
+    order: 1;
+  }
 }
